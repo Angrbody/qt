@@ -1,12 +1,13 @@
 #include "clientdialog.h"
 #include "ui_clientdialog.h"
-
+//client类实现
 ClientDialog::ClientDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ClientDialog)
 {
-    status = false;
+    status = false;     //维护一个用户登录的状态，false = 用户未与server连接
     ui->setupUi(this);
+    //这里使用connect槽函数，为后面的实现铺垫
     connect(&tcpSocket, SIGNAL(connected()), this, SLOT(onConnected()));
     connect(&tcpSocket, SIGNAL(disconnected()), this, SLOT(disConnected()));
     connect(&tcpSocket, SIGNAL(readyRead()), this, SLOT(onReadyRead()));
@@ -15,28 +16,28 @@ ClientDialog::ClientDialog(QWidget *parent) :
 
 ClientDialog::~ClientDialog()
 {
-    delete ui;
+    delete ui;   //析构
 }
 
-// slot func of sendButton
+//send按钮的功能实现
 void ClientDialog::on_sendButton_clicked()
 {
-    // get user input message
+    //获得用户输入的文字
     QString msg = ui->messageEdit->text();
     if(msg == ""){
      return;
     }
     msg = username + ": " + msg;
-    // send message
+    //发送消息
     tcpSocket.write(msg.toUtf8());
-    // clean messageEdit
+    //clear
     ui->messageEdit->clear();
 }
 
-// slot func of connectButton
+//connect按钮的功能实现
 void ClientDialog::on_connectButton_clicked()
 {
-    // if outline, connect to server
+    // if offline, connect to server
     if (status == false){
         // get server ip
         serverIp.setAddress(ui->serverIpEdit->text());
@@ -45,7 +46,7 @@ void ClientDialog::on_connectButton_clicked()
         // get username
         username = ui->usernameEdit->text();
         // send connection request
-        // if success, generate connected singal, esle generate error singal
+        // if success, generate connected singal, else generate error singal
         tcpSocket.connectToHost(serverIp, serverPort);
     }
     // if online, disconnect from server
@@ -61,6 +62,7 @@ void ClientDialog::on_connectButton_clicked()
 // slot func for successful connection with server (connected())
 void ClientDialog::onConnected()
 {
+    //确认连接状态以及各按钮的状态
     status = true;
     ui->sendButton->setEnabled(true);
     ui->serverIpEdit->setEnabled(false);
@@ -87,10 +89,14 @@ void ClientDialog::disConnected()
 // slot fucn of receive message from server
 void ClientDialog::onReadyRead()
 {
+    QString data;
+    QString str1 = QString("<font color=black>%1").arg(QString::fromWCharArray(L"颜色测试")；
     if(tcpSocket.bytesAvailable()){
         // receive message
         QByteArray buf = tcpSocket.readAll();
         // display message
+        data = QDateTime::currentDateTime().toString("HH:mm:ss");
+        ui->listWidget->addItem("                       "+data+str1);
         ui->listWidget->addItem(buf);
         // dispaly bottom message
         ui->listWidget->scrollToBottom();

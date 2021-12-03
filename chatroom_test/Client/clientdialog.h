@@ -6,6 +6,7 @@
 #include <QHostAddress>
 #include <QMessageBox>
 #include <QDebug>
+#include <QDateTime>
 
 namespace Ui {
 class ClientDialog;

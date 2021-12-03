@@ -163,7 +163,7 @@ public:
         label_2->setText(QApplication::translate("ClientDialog", "server port", 0));
         serverPortEdit->setText(QApplication::translate("ClientDialog", "8080", 0));
         label_3->setText(QApplication::translate("ClientDialog", "username", 0));
-        usernameEdit->setText(QApplication::translate("ClientDialog", "xuehui", 0));
+        usernameEdit->setText(QApplication::translate("ClientDialog", "zhuzhu", 0));
         serverIpEdit->setText(QApplication::translate("ClientDialog", "127.0.0.1", 0));
         connectButton->setText(QApplication::translate("ClientDialog", "connect server", 0));
     } // retranslateUi

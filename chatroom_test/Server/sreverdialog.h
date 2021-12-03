@@ -6,6 +6,7 @@
 #include <QTcpSocket>
 #include <QDebug>
 #include <QTimer>
+#include <QDateTime>
 
 namespace Ui {
 class SreverDialog;

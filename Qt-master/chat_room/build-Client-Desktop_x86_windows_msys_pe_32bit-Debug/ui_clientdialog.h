@@ -28,9 +28,9 @@ class Ui_ClientDialog
 public:
     QVBoxLayout *verticalLayout;
     QGridLayout *gridLayout_2;
-    QListWidget *listWidget;
     QLineEdit *messageEdit;
     QPushButton *sendButton;
+    QListWidget *listWidget;
     QGridLayout *gridLayout_3;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_2;
@@ -58,11 +58,6 @@ public:
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        listWidget = new QListWidget(ClientDialog);
-        listWidget->setObjectName(QString::fromUtf8("listWidget"));
-
-        gridLayout_2->addWidget(listWidget, 0, 0, 1, 2);
-
         messageEdit = new QLineEdit(ClientDialog);
         messageEdit->setObjectName(QString::fromUtf8("messageEdit"));
 
@@ -73,6 +68,11 @@ public:
         sendButton->setEnabled(false);
 
         gridLayout_2->addWidget(sendButton, 1, 1, 1, 1);
+
+        listWidget = new QListWidget(ClientDialog);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+
+        gridLayout_2->addWidget(listWidget, 0, 0, 1, 2);
 
 
         verticalLayout->addLayout(gridLayout_2);
@@ -160,7 +160,7 @@ public:
         label_2->setText(QApplication::translate("ClientDialog", "server port", nullptr));
         serverPortEdit->setText(QApplication::translate("ClientDialog", "8080", nullptr));
         label_3->setText(QApplication::translate("ClientDialog", "username", nullptr));
-        usernameEdit->setText(QApplication::translate("ClientDialog", "xuehui", nullptr));
+        usernameEdit->setText(QApplication::translate("ClientDialog", "zhuzhu", nullptr));
         serverIpEdit->setText(QApplication::translate("ClientDialog", "127.0.0.1", nullptr));
         connectButton->setText(QApplication::translate("ClientDialog", "connect server", nullptr));
     } // retranslateUi

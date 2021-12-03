@@ -47,6 +47,7 @@ void SreverDialog::onNewConnection(){
 // slot func of receiving the client message
 void SreverDialog::onReadyRead(){
     //
+    QString data;
     for(int i=0; i<tcpClientList.size(); i++){
         // 遍历容器找到是哪个客户端发来的消息
         // bytesAvailable()获取当前套接字等待读取消息字节数
@@ -55,8 +56,11 @@ void SreverDialog::onReadyRead(){
             // read message and save it
             QByteArray buf = tcpClientList.at(i)->readAll();
             // display message
+            data = QDateTime::currentDateTime().toString("HH:mm:ss");
+            ui->listWidget->addItem("                       "+data);
             ui->listWidget->addItem(buf);
             ui->listWidget->scrollToBottom();
+
             // start timer
             timer.start(3000);
             // forward message to other client
@@ -73,7 +77,7 @@ void SreverDialog::sendMessge(const QByteArray& buf){
 
 // slot func of timer
 void SreverDialog::onTimeout(void){
-    qDebug()<<"ni ma";
+    qDebug()<<"timer test";
     // 遍历检查容器中保存的客户端通信套接字是否已经断开连接，如果是则删除
     for(int i=0; i<tcpClientList.size(); i++){
         if(tcpClientList.at(i)->state() ==
