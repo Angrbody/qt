@@ -12,6 +12,14 @@ ClientDialog::ClientDialog(QWidget *parent) :
     connect(&tcpSocket, SIGNAL(disconnected()), this, SLOT(disConnected()));
     connect(&tcpSocket, SIGNAL(readyRead()), this, SLOT(onReadyRead()));
     connect(&tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(onError()));
+    //设置listWidget每行自动更换颜色，以区分消息发送时间和内容
+    QListWidgetItem *mListItem = new QListWidgetItem("message list",ui->listWidget);
+    mListItem ->setTextAlignment(Qt::AlignCenter);
+    QFont font1 = mListItem->font();//获取控件的font
+    font1.setBold(true);//加粗
+    mListItem->setFont(font1);
+
+    ui->listWidget->setAlternatingRowColors(true);
 }
 
 ClientDialog::~ClientDialog()
@@ -89,16 +97,18 @@ void ClientDialog::disConnected()
 // slot fucn of receive message from server
 void ClientDialog::onReadyRead()
 {
-    QString data;
-    QString str1 = QString("<font color=black>%1").arg(QString::fromWCharArray(L"颜色测试")；
+    QString curtime;
+    QString timeinfo;
     if(tcpSocket.bytesAvailable()){
-        // receive message
+        // 时间戳
+        curtime = QDateTime::currentDateTime().toString("HH:mm:ss");
+        QListWidgetItem *mListItem = new QListWidgetItem(curtime,ui->listWidget);
+        mListItem ->setTextAlignment(Qt::AlignCenter);
+        mListItem ->setForeground(Qt::blue);
+        // 接收message
         QByteArray buf = tcpSocket.readAll();
-        // display message
-        data = QDateTime::currentDateTime().toString("HH:mm:ss");
-        ui->listWidget->addItem("                       "+data+str1);
         ui->listWidget->addItem(buf);
-        // dispaly bottom message
+        // 将消息列表拉至最下端
         ui->listWidget->scrollToBottom();
     }
 }

@@ -222,6 +222,8 @@ release/moc_sreverdialog.cpp: ../../../chatroom_test/Server/sreverdialog.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QTimer \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qtimer.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qbasictimer.h \
+		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QDateTime \
+		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qdatetime.h \
 		release/moc_predefs.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/bin/moc.exe
 	D:\myapps\qt\qt12.9.0\5.12.9\mingw73_32\bin\moc.exe $(DEFINES) --include D:/code/qt/Qt-master/chat_room/build-Server-Desktop_x86_windows_msys_pe_32bit-Debug/release/moc_predefs.h -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/mkspecs/win32-g++ -ID:/code/qt/chatroom_test/Server -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtWidgets -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtGui -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtANGLE -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtNetwork -ID:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore -I. -Id:/myapps/mingw/lib/gcc/mingw32/9.2.0/include/c++ -Id:/myapps/mingw/lib/gcc/mingw32/9.2.0/include/c++/mingw32 -Id:/myapps/mingw/lib/gcc/mingw32/9.2.0/include/c++/backward -Id:/myapps/mingw/lib/gcc/mingw32/9.2.0/include -Id:/myapps/mingw/include -Id:/myapps/mingw/lib/gcc/mingw32/9.2.0/include-fixed ..\..\..\chatroom_test\Server\sreverdialog.h -o release\moc_sreverdialog.cpp
@@ -366,6 +368,8 @@ release/main.o: ../../../chatroom_test/Server/main.cpp ../../../chatroom_test/Se
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QTimer \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qtimer.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qbasictimer.h \
+		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QDateTime \
+		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qdatetime.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtWidgets/QApplication \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtWidgets/qapplication.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -492,6 +496,8 @@ release/sreverdialog.o: ../../../chatroom_test/Server/sreverdialog.cpp ../../../
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QTimer \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qtimer.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qbasictimer.h \
+		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QDateTime \
+		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/qdatetime.h \
 		../../../chatroom_test/Server/ui_sreverdialog.h \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtCore/QVariant \
 		D:/myapps/qt/qt12.9.0/5.12.9/mingw73_32/include/QtWidgets/QAction \

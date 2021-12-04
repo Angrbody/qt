@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QTimer>
 #include <QDateTime>
+#include <QFont>
 
 namespace Ui {
 class SreverDialog;

@@ -32,16 +32,16 @@ public:
     QLabel *label;
     QLineEdit *lineEdit;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QLabel *label_2;
 
     void setupUi(QDialog *SreverDialog)
     {
         if (SreverDialog->objectName().isEmpty())
             SreverDialog->setObjectName(QString::fromUtf8("SreverDialog"));
-        SreverDialog->resize(813, 591);
+        SreverDialog->resize(607, 591);
         layoutWidget = new QWidget(SreverDialog);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(170, 160, 258, 262));
+        layoutWidget->setGeometry(QRect(170, 50, 258, 411));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -73,9 +73,9 @@ public:
 
         verticalLayout->addWidget(pushButton);
 
-        pushButton_2 = new QPushButton(SreverDialog);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(550, 320, 75, 23));
+        label_2 = new QLabel(SreverDialog);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(230, 30, 151, 16));
 
         retranslateUi(SreverDialog);
 
@@ -88,7 +88,7 @@ public:
         label->setText(QApplication::translate("SreverDialog", "server port:", nullptr));
         lineEdit->setText(QApplication::translate("SreverDialog", "8080", nullptr));
         pushButton->setText(QApplication::translate("SreverDialog", "create server", nullptr));
-        pushButton_2->setText(QApplication::translate("SreverDialog", "PushButton", nullptr));
+        label_2->setText(QApplication::translate("SreverDialog", "Welcome to the chatroom!", nullptr));
     } // retranslateUi
 
 };
